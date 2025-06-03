@@ -13,7 +13,7 @@ function App() {
     testConnection();
   }, []);
 
-  return <h1>Testing Supabase Connection</h1>;
+  return <h1>Welcome to the Job Board</h1>;
 }
 
 export default App;
