@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router";
 
 type Job = {
   id: string;
@@ -12,6 +13,7 @@ type Job = {
 
 function JobListing() {
   const [jobs, setJobs] = useState<Job[]>([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchJobs();
@@ -28,6 +30,12 @@ function JobListing() {
       console.log("Fetched jobs:", data);
       setJobs(data || []);
     }
+  };
+
+  const navigateToJob = (job: Job) => {
+    console.log("Selected job:", job);
+
+    navigate(`/listings/${job.id}`);
   };
 
   return (
@@ -60,7 +68,8 @@ function JobListing() {
               .map((job) => (
                 <tr
                   key={job.id}
-                  className="hover:bg-indigo-50 transition-colors duration-200"
+                  className="hover:bg-indigo-50 transition-colors duration-200 cursor-pointer"
+                  onClick={() => navigateToJob(job)}
                 >
                   <td className="px-6 py-4 whitespace-nowrap text-indigo-900 font-medium">
                     {job.title}
