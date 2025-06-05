@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 type Job = {
   title: string;
@@ -17,6 +18,8 @@ function JobForm() {
     location: "",
     salary: "",
   });
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -40,6 +43,8 @@ function JobForm() {
         location: "",
         salary: "",
       });
+
+      navigate("/listings", { state: { created: true } }); // redirect to listings page
     }
   };
 

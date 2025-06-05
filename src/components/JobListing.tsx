@@ -21,10 +21,12 @@ function JobListing() {
   useEffect(() => {
     if (location.state?.deleted) {
       setToastMessage("Job deleted successfully!");
-
-      // Clear the state to avoid showing the toast again
-      window.history.replaceState({}, document.title);
+    } else if (location.state?.created) {
+      setToastMessage("Job created successfully!");
     }
+
+    // Clear the state to avoid showing the toast again
+    window.history.replaceState({}, document.title);
   }, [location.state]);
 
   useEffect(() => {
