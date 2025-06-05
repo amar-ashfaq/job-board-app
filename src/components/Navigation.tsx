@@ -3,6 +3,7 @@ import App from "../App.tsx";
 import JobListing from "./JobListing";
 import JobForm from "./JobForm.tsx";
 import JobDetails from "./JobDetails.tsx";
+import EditJob from "./EditJob.tsx";
 
 function Navigation() {
   return (
@@ -38,6 +39,7 @@ function Navigation() {
           <Route path="/listings" element={<JobListing />} />
           <Route path="/create-listing" element={<JobForm />} />
           <Route path="/listings/:id" element={<JobDetails />} />
+          <Route path="/listings/:id/editDetails" element={<EditJob />} />
         </Routes>
       </div>
     </Router>

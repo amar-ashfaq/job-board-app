@@ -23,6 +23,8 @@ function JobListing() {
       setToastMessage("Job deleted successfully!");
     } else if (location.state?.created) {
       setToastMessage("Job created successfully!");
+    } else if (location.state?.updated) {
+      setToastMessage("Job updated successfully!");
     }
 
     // Clear the state to avoid showing the toast again

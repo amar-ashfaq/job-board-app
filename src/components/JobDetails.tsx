@@ -45,9 +45,12 @@ function JobDetails() {
     } else {
       console.log("Job deleted successfully");
       setIsModalOpen(false);
-      //navigate("/listings/"); // redirect to listings page
       navigate("/listings", { state: { deleted: true } }); // redirect to listings page
     }
+  };
+
+  const editJobDetails = () => {
+    navigate(`/listings/${id}/editDetails`);
   };
 
   return (
@@ -80,6 +83,17 @@ function JobDetails() {
 
       {/* Add margin-top to separate the delete button from above content */}
       <div className="mt-8">
+        <button
+          type="submit"
+          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors"
+          onClick={editJobDetails}
+        >
+          Edit Job
+        </button>
+      </div>
+
+      {/* Add margin-top to separate the delete button from above content */}
+      <div className="mt-4">
         <button
           type="submit"
           className="w-full bg-red-600 text-white font-semibold py-3 rounded hover:bg-red-700 transition-colors"
