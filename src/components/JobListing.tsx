@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 
 type Job = {
   id: string;
@@ -14,6 +14,25 @@ type Job = {
 function JobListing() {
   const [jobs, setJobs] = useState<Job[]>([]);
   const navigate = useNavigate();
+  const [toastMessage, setToastMessage] = useState("");
+
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.deleted) {
+      setToastMessage("Job deleted successfully!");
+
+      // Clear the state to avoid showing the toast again
+      window.history.replaceState({}, document.title);
+    }
+  }, [location.state]);
+
+  useEffect(() => {
+    if (toastMessage) {
+      const timer = setTimeout(() => setToastMessage(""), 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [toastMessage]);
 
   useEffect(() => {
     fetchJobs();
@@ -40,6 +59,11 @@ function JobListing() {
 
   return (
     <div className="max-w-7xl mx-auto p-6">
+      {toastMessage && (
+        <div className="max-w-xs w-full mx-auto bg-green-200 text-green-800 px-4 py-2 rounded shadow text-center mb-4">
+          {toastMessage}
+        </div>
+      )}
       <h1 className="text-3xl font-bold mb-6 text-indigo-700">Job Listings</h1>
       <div className="overflow-x-auto border border-indigo-400 rounded-lg shadow-md">
         <table className="min-w-full table-auto border-collapse">
