@@ -21,7 +21,7 @@ function App() {
           <h1 className="text-5xl font-extrabold mb-6 text-center text-white drop-shadow-lg">
             Welcome to the Job Board
           </h1>
-          <p className="max-w-xl text-center text-indigo-200 mb-8">
+          <p className="max-w-xl text-center text-indigo-100 mb-8">
             Find your dream job or post new opportunities with ease. Explore
             listings, create job posts, and connect with top employers all in
             one place.
@@ -35,7 +35,7 @@ function App() {
             </a>
             <a
               href="/create-listing"
-              className="px-6 py-3 border border-white font-semibold rounded hover:bg-white hover:text-indigo-700 transition cursor-pointer"
+              className="px-6 py-3 border border-white text-white font-semibold rounded hover:bg-white hover:text-indigo-700 transition cursor-pointer"
             >
               Post a Job
             </a>

@@ -81,22 +81,22 @@ function JobDetails() {
         <p className="text-gray-500">Loading job details...</p>
       )}
 
-      {/* Add margin-top to separate the delete button from above content */}
-      <div className="mt-8">
+      <div className="flex justify-center space-x-4 mt-8">
+        {/* Add margin-top to separate the delete button from above content */}
+
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors cursor-pointer"
+          className="w-32 bg-indigo-600 text-white font-semibold px-6 py-3 rounded hover:bg-indigo-700 transition-colors cursor-pointer"
           onClick={editJobDetails}
         >
           Edit Job
         </button>
-      </div>
 
-      {/* Add margin-top to separate the delete button from above content */}
-      <div className="mt-4">
+        {/* Add margin-top to separate the delete button from above content */}
+
         <button
           type="submit"
-          className="w-full bg-red-600 text-white font-semibold py-3 rounded hover:bg-red-700 transition-colors cursor-pointer"
+          className="w-32 bg-red-600 text-white font-semibold px-6 py-3 rounded hover:bg-red-700 transition-colors cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         >
           Delete Job
@@ -109,6 +109,7 @@ function JobDetails() {
           <h3 className="mb-4 text-lg font-normal text-gray-500 dark:text-gray-400">
             Are you sure you want to delete this job?
           </h3>
+
           <div className="flex justify-center gap-4">
             <button
               onClick={handleDelete}
