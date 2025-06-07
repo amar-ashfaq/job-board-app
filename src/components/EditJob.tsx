@@ -178,7 +178,7 @@ function EditJob() {
 
       <button
         type="submit"
-        className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors"
+        className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors cursor-pointer"
       >
         Update
       </button>

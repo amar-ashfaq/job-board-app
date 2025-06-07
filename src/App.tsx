@@ -29,13 +29,13 @@ function App() {
           <div className="flex space-x-4">
             <a
               href="/listings"
-              className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded shadow hover:bg-indigo-50 transition"
+              className="px-6 py-3 bg-white text-indigo-700 font-semibold rounded shadow hover:bg-indigo-50 transition cursor-pointer"
             >
               Browse Jobs
             </a>
             <a
               href="/create-listing"
-              className="px-6 py-3 border border-white font-semibold rounded hover:bg-white hover:text-indigo-700 transition"
+              className="px-6 py-3 border border-white font-semibold rounded hover:bg-white hover:text-indigo-700 transition cursor-pointer"
             >
               Post a Job
             </a>

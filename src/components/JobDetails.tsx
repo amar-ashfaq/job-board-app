@@ -85,7 +85,7 @@ function JobDetails() {
       <div className="mt-8">
         <button
           type="submit"
-          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors"
+          className="w-full bg-indigo-600 text-white font-semibold py-3 rounded hover:bg-indigo-700 transition-colors cursor-pointer"
           onClick={editJobDetails}
         >
           Edit Job
@@ -96,7 +96,7 @@ function JobDetails() {
       <div className="mt-4">
         <button
           type="submit"
-          className="w-full bg-red-600 text-white font-semibold py-3 rounded hover:bg-red-700 transition-colors"
+          className="w-full bg-red-600 text-white font-semibold py-3 rounded hover:bg-red-700 transition-colors cursor-pointer"
           onClick={() => setIsModalOpen(true)}
         >
           Delete Job
@@ -112,13 +112,13 @@ function JobDetails() {
           <div className="flex justify-center gap-4">
             <button
               onClick={handleDelete}
-              className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700"
+              className="px-4 py-2 text-white bg-red-600 rounded hover:bg-red-700 cursor-pointer"
             >
               Delete
             </button>
             <button
               onClick={() => setIsModalOpen(false)}
-              className="px-4 py-2 text-gray-700 bg-gray-200 rounded hover:bg-gray-300"
+              className="px-4 py-2 text-gray-700 bg-gray-200 rounded hover:bg-gray-300 cursor-pointer"
             >
               Cancel
             </button>
