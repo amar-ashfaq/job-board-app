@@ -19,7 +19,7 @@ function EditJob() {
     salary: "",
   });
 
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -46,11 +46,11 @@ function EditJob() {
     const { error } = await supabase
       .from("jobs")
       .update({
-        title: job.title,
-        description: job.description,
-        company: job.company,
-        location: job.location,
-        salary: job.salary,
+        title: job.title.trim(),
+        description: job.description.trim(),
+        company: job.company.trim(),
+        location: job.location.trim(),
+        salary: job.salary.trim(),
       })
       .eq("id", id);
 
@@ -58,14 +58,6 @@ function EditJob() {
       console.error("Error inserting record:", error);
     } else {
       console.log("Record inserted successfully!");
-      setJobDetails({
-        title: "",
-        description: "",
-        company: "",
-        location: "",
-        salary: "",
-      });
-
       navigate("/listings", { state: { updated: true } }); // redirect to listings page
     }
   };

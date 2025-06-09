@@ -4,7 +4,7 @@ import { supabase } from "../supabaseClient";
 import DeleteJob from "./DeleteJob";
 
 type JobDetailsProps = {
-  id: number;
+  id: string;
   title: string;
   description: string;
   company: string;
@@ -13,7 +13,7 @@ type JobDetailsProps = {
 };
 
 function JobDetails() {
-  const { id } = useParams();
+  const { id } = useParams<{ id: string }>();
   const [jobDetails, setJobDetails] = useState<JobDetailsProps | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const navigate = useNavigate();

@@ -25,25 +25,17 @@ function JobForm() {
     e.preventDefault();
 
     const { error } = await supabase.from("jobs").insert({
-      title: job.title,
-      description: job.description,
-      company: job.company,
-      location: job.location,
-      salary: job.salary,
+      title: job.title.trim(),
+      description: job.description.trim(),
+      company: job.company.trim(),
+      location: job.location.trim(),
+      salary: job.salary.trim(),
     });
 
     if (error) {
       console.error("Error inserting record:", error);
     } else {
       console.log("Record inserted successfully!");
-      setJob({
-        title: "",
-        description: "",
-        company: "",
-        location: "",
-        salary: "",
-      });
-
       navigate("/listings", { state: { created: true } }); // redirect to listings page
     }
   };
