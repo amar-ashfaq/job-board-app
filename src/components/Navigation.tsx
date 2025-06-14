@@ -6,6 +6,7 @@ import JobDetails from "./jobs/JobDetails.tsx";
 import EditJob from "./jobs/EditJob.tsx";
 import Dashboard from "./dashboard/Dashboard.tsx";
 import Login from "./auth/Login.tsx";
+import Signup from "./auth/Signup.tsx";
 
 function Navigation() {
   return (
@@ -64,6 +65,7 @@ function Navigation() {
 
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
         </Routes>
       </div>
     </Router>
