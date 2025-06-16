@@ -1,5 +1,5 @@
 import { Navigate } from "react-router-dom";
-import { useUser } from "./UserContext"; // or your context
+import { useUser } from "./UserContext";
 import type { JSX } from "react";
 
 const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
