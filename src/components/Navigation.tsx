@@ -8,6 +8,7 @@ import Dashboard from "./dashboard/Dashboard.tsx";
 import Login from "./auth/Login.tsx";
 import Signup from "./auth/Signup.tsx";
 import { useUser } from "./UserContext.tsx";
+import ProtectedRoute from "./ProtectedRoute.tsx";
 
 function Navigation() {
   const { user, logout } = useUser(); // make sure logout is exposed
@@ -81,7 +82,14 @@ function Navigation() {
           <Route path="/listings/:id" element={<JobDetails />} />
           <Route path="/listings/:id/editDetails" element={<EditJob />} />
 
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
         </Routes>
