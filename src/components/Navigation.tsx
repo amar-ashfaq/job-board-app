@@ -42,23 +42,24 @@ function Navigation() {
 
           {/* Right side links */}
           <div className="flex space-x-6">
-            <Link
-              to="/dashboard"
-              className="text-white font-semibold hover:text-indigo-300 transition-colors duration-200"
-            >
-              Dashboard
-            </Link>
-
             {user ? (
-              <button
-                onClick={() => {
-                  logout();
-                  navigate("/login");
-                }}
-                className="text-white font-semibold hover:text-red-300 transition-colors duration-200 cursor-pointer"
-              >
-                Logout
-              </button>
+              <>
+                <Link
+                  to="/dashboard"
+                  className="text-white font-semibold hover:text-indigo-300 transition-colors duration-200"
+                >
+                  Dashboard
+                </Link>
+                <button
+                  onClick={() => {
+                    logout();
+                    navigate("/login");
+                  }}
+                  className="text-white font-semibold hover:text-red-300 transition-colors duration-200 cursor-pointer"
+                >
+                  Logout
+                </button>
+              </>
             ) : (
               <Link
                 to="/login"
