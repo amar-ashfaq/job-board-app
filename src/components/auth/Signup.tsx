@@ -28,7 +28,7 @@ function Signup() {
     if (error) {
       setError(error.message);
     } else {
-      navigate("/dashboard");
+      navigate("/login", { state: { signedUp: true } });
     }
   };
 
